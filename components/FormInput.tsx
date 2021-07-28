@@ -46,7 +46,7 @@ function AntdFormInput_(
         <Form.Item className={props.className}
             label={props.label}
             wrapperCol={props.type == "button" ? { offset: 8, span: 16 } : {}}
-            name="patientName"
+            name="patientName" //ToDo:  fetch from props
             rules={[
                 {
                     required: true,

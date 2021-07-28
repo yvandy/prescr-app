@@ -31,16 +31,6 @@ import AntdFormInput from "../components/FormInput";
 import { Select } from 'antd';
 import MedicineInput from "../components/MedicineInput";
 
-registerComponent(Slider, {
-  name: "Slider",
-  props: {
-    disabled: "boolean",
-    range: "boolean",
-    vertical: "boolean",
-  },
-  importPath: "antd",
-});
-
 registerComponent(Select, {
   name: "Select",
   props: {
@@ -78,6 +68,36 @@ registerComponent(Button, {
   importName: "antdButton"
 });
 
+registerComponent(AntdFormInput, {
+  name: "FormInput",
+  props: {
+    defaultValue: "string",
+    label: "string",
+    type: "string"
+  },
+  importPath: "./components/FormInput",
+});
+
+registerComponent(MedicineInput, {
+  name: "MedicineInput",
+  props: {
+    defaultValue: "string",
+    label: "string",
+    type: "string"
+  },
+  importPath: "./components/MedicineInput",
+});
+
+registerComponent(Slider, {
+  name: "Slider",
+  props: {
+    disabled: "boolean",
+    range: "boolean",
+    vertical: "boolean",
+  },
+  importPath: "antd",
+});
+
 registerComponent(Menu, {
   name: "Menu",
   props: {
@@ -111,25 +131,6 @@ registerComponent(MenuItem, {
   isDefaultExport: true,
 });
 
-registerComponent(AntdFormInput, {
-  name: "FormInput",
-  props: {
-    defaultValue: "string",
-    label: "string",
-    type: "string"
-  },
-  importPath: "./components/FormInput",
-});
-
-registerComponent(MedicineInput, {
-  name: "MedicineInput",
-  props: {
-    defaultValue: "string",
-    label: "string",
-    type: "string"
-  },
-  importPath: "./components/MedicineInput",
-});
 
 registerComponent(Collapse, {
   name: "Collapse",

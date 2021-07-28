@@ -10,7 +10,7 @@ function MedicineInput_(
     const [medicineData, setMedicineData] = useState([]);
     const [error, setError] = useState(null);
 
-    const fetchFoodData = useCallback(async () => {
+    const fetchMedicineData = useCallback(async () => {
 
         try {
             const response = await fetch('https://prescription-app-84502-default-rtdb.firebaseio.com/medicines.json');
@@ -35,7 +35,7 @@ function MedicineInput_(
     }, []);
 
     useEffect(() => {
-        fetchFoodData().catch((error) => {
+        fetchMedicineData().catch((error) => {
             setError(error.message);
         });
     }, []);
