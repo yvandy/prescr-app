@@ -1,6 +1,6 @@
 import * as React from "react";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import { Button, DatePicker, Form, Input, InputNumber, Upload } from "antd";
+import { Button, DatePicker, Form, Input, InputNumber, Select, Upload } from "antd";
 import { UploadOutlined } from '@ant-design/icons';
 export interface DefaultAntdFormInputProps {
     label?: string;
@@ -14,24 +14,8 @@ function AntdFormInput_(
     props: AntdFormInputProps,
     ref: HTMLElementRefOf<"div">
 ) {
-    // Use PlasmicAntdFormInput to render this component as it was
-    // designed in Plasmic, by activating the appropriate variants,
-    // attaching the appropriate event handlers, etc.  You
-    // can also install whatever React hooks you need here to manage state or
-    // fetch data.
-    //
-    // Props you can pass into PlasmicAntdFormInput are:
-    // 1. Variants you want to activate,
-    // 2. Contents for slots you want to fill,
-    // 3. Overrides for any named node in the component to attach behavior and data,
-    // 4. Props to set on the root node.
-    //
-    // By default, we are just piping all AntdFormInputProps here, but feel free
-    // to do whatever works for you.
-
     let inputEle;
     switch (props.type) {
-
         case "number": {
             inputEle = <InputNumber />
             break;
@@ -44,13 +28,6 @@ function AntdFormInput_(
             inputEle = <Upload>
                 <Button icon={<UploadOutlined />}>Upload</Button>
             </Upload>
-            break;
-        }
-        case "medication": {
-            inputEle = <Input.Group compact>
-                <Input style={{ width: '80%' }} placeholder="Medication" />
-                <InputNumber style={{ width: '20%' }} placeholder="Dosage" />
-            </Input.Group>
             break;
         }
         case "button": {

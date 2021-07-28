@@ -28,6 +28,8 @@ import { Tilt } from "../components/Tilt";
 import { ParallaxWrapper } from "../components/ParallaxWrapper";
 import { Reveal } from "../components/Reveal";
 import AntdFormInput from "../components/FormInput";
+import { Select } from 'antd';
+import MedicineInput from "../components/MedicineInput";
 
 registerComponent(Slider, {
   name: "Slider",
@@ -38,6 +40,18 @@ registerComponent(Slider, {
   },
   importPath: "antd",
 });
+
+registerComponent(Select, {
+  name: "Select",
+  props: {
+    disabled: "boolean",
+    range: "boolean",
+    vertical: "boolean",
+    placeholder: "string",
+  },
+  importPath: "antd",
+});
+
 
 registerComponent(DatePicker, {
   name: "DatePicker",
@@ -105,6 +119,16 @@ registerComponent(AntdFormInput, {
     type: "string"
   },
   importPath: "./components/FormInput",
+});
+
+registerComponent(MedicineInput, {
+  name: "MedicineInput",
+  props: {
+    defaultValue: "string",
+    label: "string",
+    type: "string"
+  },
+  importPath: "./components/MedicineInput",
 });
 
 registerComponent(Collapse, {
