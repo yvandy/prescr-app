@@ -1,6 +1,6 @@
 import * as React from "react";
 import { PlasmicCanvasHost, registerComponent } from "@plasmicapp/host";
-import { Alert, Carousel, Collapse, Menu, Slider } from "antd";
+import { Alert, Button, Carousel, Collapse, DatePicker, Menu, Slider } from "antd";
 import MenuItem from "antd/lib/menu/MenuItem";
 import CollapsePanel from "antd/lib/collapse/CollapsePanel";
 import YouTube from "react-youtube";
@@ -27,6 +27,7 @@ import { Embed } from "../components/Embed";
 import { Tilt } from "../components/Tilt";
 import { ParallaxWrapper } from "../components/ParallaxWrapper";
 import { Reveal } from "../components/Reveal";
+import AntdFormInput from "../components/FormInput";
 
 registerComponent(Slider, {
   name: "Slider",
@@ -36,6 +37,31 @@ registerComponent(Slider, {
     vertical: "boolean",
   },
   importPath: "antd",
+});
+
+registerComponent(DatePicker, {
+  name: "DatePicker",
+  props: {
+    disabled: "boolean",
+    range: "boolean",
+    vertical: "boolean",
+    format: "string",
+    placeholder: "string"
+  },
+  importPath: "antd",
+});
+
+registerComponent(Button, {
+  name: "Button",
+  props: {
+    disabled: "boolean",
+    range: "boolean",
+    vertical: "boolean",
+    type: "string",
+    value: "string"
+  },
+  importPath: "antd",
+  importName: "antdButton"
 });
 
 registerComponent(Menu, {
@@ -69,6 +95,16 @@ registerComponent(MenuItem, {
   },
   importPath: "antd/lib/menu/MenuItem",
   isDefaultExport: true,
+});
+
+registerComponent(AntdFormInput, {
+  name: "FormInput",
+  props: {
+    defaultValue: "string",
+    label: "string",
+    type: "string"
+  },
+  importPath: "./components/FormInput",
 });
 
 registerComponent(Collapse, {
